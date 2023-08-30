@@ -1,0 +1,376 @@
+=======================================================================================
+Unprocessed Data
+                                        Logistic Regression Model Metrics:
+                                        Accuracy (in %): 99.89817773252344
+                                        Precision (in %): 85.29411764705883
+                                        Recall (in %): 54.71698113207547
+                                        F1 Score (in %): 66.66666666666666
+                                        ROC AUC Score (in %): 95.44290640904131
+Decision Tree Model Metrics:
+Accuracy (in %): 99.92099996488886
+Precision (in %): 80.19801980198021
+Recall (in %): 76.41509433962264
+F1 Score (in %): 78.26086956521739
+ROC AUC Score (in %): 88.1899588765793
+Random Forest Model Metrics:
+Accuracy (in %): 99.95259997893332
+Precision (in %): 96.47058823529412
+Recall (in %): 77.35849056603774
+F1 Score (in %): 85.86387434554973
+ROC AUC Score (in %): 94.19534885881843
+Neural Network Model Metrics:
+Accuracy (in %): 99.8139110284049
+Precision (in %): 0.0
+Recall (in %): 0.0
+F1 Score (in %): 0.0
+ROC AUC Score (in %): 49.224970199457886
+
+=======================================================================================
+Processed Data || Where processed means applying saling and/or smoteenn
+Logistic Regression Model Metrics:
+Accuracy (in %): 99.55935535971349
+Precision (in %): 1.342281879194631
+Recall (in %): 1.8867924528301887
+F1 Score (in %): 1.5686274509803921
+ROC AUC Score (in %): 50.45905445335585
+Decision Tree Model Metrics:
+Accuracy (in %): 99.77177767634564
+Precision (in %): 43.684210526315795
+Recall (in %): 78.30188679245283
+F1 Score (in %): 56.081081081081095
+ROC AUC Score (in %): 89.05684602743507
+                                        Random Forest Model Metrics:
+                                        Accuracy (in %): 99.95259997893332
+                                        Precision (in %): 96.47058823529412
+                                        Recall (in %): 77.35849056603774
+                                        F1 Score (in %): 85.86387434554973
+                                        ROC AUC Score (in %): 94.66934506505677
+Neural Network Model Metrics:
+Accuracy (in %): 99.8139110284049
+Precision (in %): 0.0
+Recall (in %): 0.0
+F1 Score (in %): 0.0
+ROC AUC Score (in %): 50.0
+
+Random Forest with processed data seems to be the best
+Continuing with the type of data (whether processed or unrocessed) that works best for each model.
+
+=======================================================================================
+=======================================================================================
+Further evaluations
+RandomForest k_folds = 5
+Accuracy Scores for Each Fold:
+[0.99953916 0.99953916 0.99962694 0.99927582 0.99964888]
+Mean Accuracy: 99.95%
+Standard Deviation of Accuracy: 0.00
+LogisticRegression k_folds = 5
+Accuracy Scores for Each Fold:
+[0.99927582 0.99918804 0.99910027 0.99874915 0.99929777]
+Mean Accuracy: 99.91%
+Standard Deviation of Accuracy: 0.00
+DecisionTree k_folds = 10
+Accuracy Scores for Each Fold:
+[0.99921001 0.99916612 0.99947334 0.99903445 0.99951723 0.99912219
+ 0.9990783  0.99899052 0.9990783  0.99925386]
+Mean Accuracy: 99.92%
+Standard Deviation of Accuracy: 0.00
+
+
+=======================================================================================
+=======================================================================================
+Neural Networks Testing
+
+=======================================================================================
+10 epochs
+Neural Network Model Metrics SDG:
+Accuracy (in %): 99.2451107756048
+Precision (in %): 0.9090909090909091
+Recall (in %): 2.8301886792452833
+F1 Score (in %): 1.3761467889908259
+ROC AUC Score (in %): 54.920026362528574
+Neural Network Model Metrics ADAM:
+Accuracy (in %): 99.74017766230119
+Precision (in %): 2.272727272727273
+Recall (in %): 0.9433962264150944
+F1 Score (in %): 1.3333333333333335
+ROC AUC Score (in %): 46.019976650711094
+Neural Network Model Metrics ADAGRAD:
+Accuracy (in %): 1.2604894491064218
+Precision (in %): 0.1881100266193434
+Recall (in %): 100.0
+F1 Score (in %): 0.37551367436587785
+ROC AUC Score (in %): 50.79587026874912
+Neural Network Model Metrics ADADELTA:
+Accuracy (in %): 0.25631122502721115
+Precision (in %): 0.186219739292365
+Recall (in %): 100.0
+F1 Score (in %): 0.3717472118959108
+ROC AUC Score (in %): 50.287568594343604
+Neural Network Model Metrics NADAM:
+Accuracy (in %): 0.6811558582914926
+Precision (in %): 0.187014820042343
+Recall (in %): 100.0
+F1 Score (in %): 0.3733314549360758
+ROC AUC Score (in %): 50.100178604139955
+Neural Network Model Metrics ADAMAX:
+Accuracy (in %): 42.66177451634423
+Precision (in %): 0.26581930398117876
+Recall (in %): 82.0754716981132
+F1 Score (in %): 0.5299223389675651
+ROC AUC Score (in %): 71.99485758128446
+Neural Network Model Metrics FTRL:
+Accuracy (in %): 5.738913661739406
+Precision (in %): 0.19702968456662764
+Recall (in %): 100.0
+F1 Score (in %): 0.39328448195900195
+ROC AUC Score (in %): 78.71386767231883
+
+The reason for this discrepancy can be attributed to the class distribution in the dataset. If one class is much smaller (e.g., fraud cases are rare compared to legitimate transactions), the model may be biased towards predicting the majority class (non-fraud) more frequently. In such cases, the ROC curve and AUC (Area Under the ROC Curve) are better evaluation metrics as they provide a more comprehensive view of the model's performance, especially in imbalanced datasets.
+
+=======================================================================================
+20 epochs
+Neural Network Model Metrics SDG:
+Accuracy (in %): 0.31600014044450686
+Precision (in %): 0.18633103642244409
+Recall (in %): 100.0
+F1 Score (in %): 0.37196897919079197
+ROC AUC Score (in %): 50.66923455747854
+Neural Network Model Metrics ADAM:
+Accuracy (in %): 0.19486675327411257
+Precision (in %): 0.186105307512685
+Recall (in %): 100.0
+F1 Score (in %): 0.37151
+Neural Network Model Metrics ADAGRAD:
+Accuracy (in %): 5.651135844949264
+Precision (in %): 0.1968467381009861
+Recall (in %): 100.0
+F1 Score (in %): 0.3929200259475489
+ROC AUC Score (in %): 87.3036250467915
+Neural Network Model Metrics ADADELTA:
+Accuracy (in %): 0.32653347845932373
+Precision (in %): 0.18635069090397666
+Recall (in %): 100.0
+F1 Score (in %): 0.3720081420649961
+ROC AUC Score (in %): 50.465210355987054
+Neural Network Model Metrics NADAM:
+Accuracy (in %): 99.74017766230119
+Precision (in %): 2.272727272727273
+Recall (in %): 0.9433962264150944
+F1 Score (in %): 1.3333333333333335
+ROC AUC Score (in %): 50.087095236957445
+Neural Network Model Metrics ADAMAX:
+Accuracy (in %): 0.32477792212352097
+Precision (in %): 0.1863474148691173
+Recall (in %): 100.0
+F1 Score (in %): 0.37200161434662826
+ROC AUC Score (in %): 50.674511045448156
+Neural Network Model Metrics FTRL:
+Accuracy (in %): 99.8806221691654
+Precision (in %): 63.38028169014085
+Recall (in %): 84.90566037735849
+F1 Score (in %): 72.58064516129033
+ROC AUC Score (in %): 97.93671898022413
+
+
+=======================================================================================
+30 epochs
+Neural Network Model Metrics SDG:
+Accuracy (in %): 0.2405112180049858
+Precision (in %): 0.18619030053924926
+Recall (in %): 100.0
+F1 Score (in %): 0.3716885530445149
+ROC AUC Score (in %): 50.34121288870128
+Neural Network Model Metrics ADAM:
+Accuracy (in %): 99.7436887749728
+Precision (in %): 2.380952380952381
+Recall (in %): 0.9433962264150944
+F1 Score (in %): 1.3513513513513513
+ROC AUC Score (in %): 50.1194510594126
+Neural Network Model Metrics ADAGRAD:
+Accuracy (in %): 11.690249640110952
+Precision (in %): 0.2102799103334722
+Recall (in %): 100.0
+F1 Score (in %): 0.4196773235672573
+ROC AUC Score (in %): 90.02789403750224
+Neural Network Model Metrics ADADELTA:
+Accuracy (in %): 0.21066676029633788
+Precision (in %): 0.18613471939313056
+Recall (in %): 100.0
+F1 Score (in %): 0.37157780348441827
+ROC AUC Score (in %): 50.123997467285776
+Neural Network Model Metrics NADAM:
+Accuracy (in %): 99.76651100733822
+Precision (in %): 3.4482758620689653
+Recall (in %): 0.9433962264150944
+F1 Score (in %): 1.4814814814814814
+ROC AUC Score (in %): 50.19187002715898
+Neural Network Model Metrics ADAMAX:
+Accuracy (in %): 99.78933323970367
+Precision (in %): 0.0
+Recall (in %): 0.0
+F1 Score (in %): 0.0
+ROC AUC Score (in %): 45.366272888011025
+Neural Network Model Metrics FTRL:
+Accuracy (in %): 99.83322214809873
+Precision (in %): 72.0
+Recall (in %): 16.9811320754717
+F1 Score (in %): 27.480916030534345
+ROC AUC Score (in %): 63.05807156643331
+
+From these, the best are:
+SDG 10 epochs
+ADADELTA 20 epochs
+FTLR 20 epochs
+ADAM 30 epochs
+ADAGRAD 30 epochs
+NADAM 30 epochs
+Adamax 10 and 30 epochs
+
+
+=======================================================================================
+Using the best epochs for each optimizer and adding more metrics
+Neural Network Model Metrics SDG:
+Accuracy (in %): 0.24753344334819705
+Precision (in %): 0.1862033832803415
+Recall (in %): 100.0
+F1 Score (in %): 0.37171462135956373
+ROC AUC Score (in %): 50.3552835232869
+Neural Network Model Metrics ADAM:
+Accuracy (in %): 0.27035567571363367
+Precision (in %): 0.18624591488913098
+Recall (in %): 100.0
+F1 Score (in %): 0.3717993686425815
+ROC AUC Score (in %): 50.3588011819333
+Neural Network Model Metrics ADAGRAD:
+Accuracy (in %): 3.5286682349636598
+Precision (in %): 0.19252424715754296
+Recall (in %): 100.0
+F1 Score (in %): 0.384308607062577
+ROC AUC Score (in %): 72.76123427341102
+Neural Network Model Metrics ADADELTA:
+Accuracy (in %): 0.34584459815315477
+Precision (in %): 0.1863867348912451
+Recall (in %): 100.0
+F1 Score (in %): 0.37207996208996613
+ROC AUC Score (in %): 49.96475704261808
+Neural Network Model Metrics NADAM:
+Accuracy (in %): 99.79108879603946
+Precision (in %): 0.0
+Recall (in %): 0.0
+F1 Score (in %): 0.0
+ROC AUC Score (in %): 50.2754641981995
+Neural Network Model Metrics ADAMAX 10:
+Accuracy (in %): 99.74017766230119
+Precision (in %): 12.5
+Recall (in %): 6.60377358490566
+F1 Score (in %): 8.641975308641976
+ROC AUC Score (in %): 57.93148231480523
+Neural Network Model Metrics FTRL:
+Accuracy (in %): 2.5683789192795197
+Precision (in %): 0.19063033899829152
+Recall (in %): 100.0
+F1 Score (in %): 0.3805352623359839
+ROC AUC Score (in %): 59.444390794619174
+
+Adding more metrics (metrics = ['accuracy', 'AUC']) resulted worse results
+
+
+=======================================================================================
+Going back to default metrics and increasing batch size to 256
+Neural Network Model Metrics SDG:
+Accuracy (in %): 1.862645272286788
+Precision (in %): 0.18926205652864822
+Recall (in %): 100.0
+F1 Score (in %): 0.37780906385329605
+ROC AUC Score (in %): 53.340215997515074
+Neural Network Model Metrics ADAM:
+Accuracy (in %): 2.377023278677013
+Precision (in %): 0.1902573859353125
+Recall (in %): 100.0
+F1 Score (in %): 0.3797921891795055
+ROC AUC Score (in %): 50.97757724911129
+Neural Network Model Metrics ADAGRAD:
+Accuracy (in %): 99.85428882412836
+Precision (in %): 59.055118110236215
+Recall (in %): 70.75471698113208
+F1 Score (in %): 64.37768240343347
+ROC AUC Score (in %): 97.09485366540032
+Neural Network Model Metrics ADADELTA:
+Accuracy (in %): 0.352866823496366
+Precision (in %): 0.18639984525295866
+Recall (in %): 100.0
+F1 Score (in %): 0.37210608533866923
+ROC AUC Score (in %): 50.113378120428706
+Neural Network Model Metrics NADAM:
+Accuracy (in %): 55.03142445841087
+Precision (in %): 0.1446272915608021
+Recall (in %): 34.90566037735849
+F1 Score (in %): 0.28806103779827946
+ROC AUC Score (in %): 48.02506696825611
+Neural Network Model Metrics FTRL:
+Accuracy (in %): 99.80864435939749
+Precision (in %): 45.714285714285715
+Recall (in %): 15.09433962264151
+F1 Score (in %): 22.695035460992905
+ROC AUC Score (in %): 62.886245556467046
+
+All performed worse except ADAGRAD which had better results
+
+For Neural Networks, best performing are:
+From these, the best are:
+SDG 10 epochs
+Neural Network Model Metrics SDG:
+Accuracy (in %): 99.2451107756048
+Precision (in %): 0.9090909090909091
+Recall (in %): 2.8301886792452833
+F1 Score (in %): 1.3761467889908259
+ROC AUC Score (in %): 54.920026362528574
+
+ADADELTA 20 epochs
+Neural Network Model Metrics ADADELTA:
+Accuracy (in %): 0.32653347845932373
+Precision (in %): 0.18635069090397666
+Recall (in %): 100.0
+F1 Score (in %): 0.3720081420649961
+ROC AUC Score (in %): 50.465210355987054
+                                        NO LONGER AVAILABLE
+                                        FTLR 20 epochs
+                                        Neural Network Model Metrics FTRL:
+                                        Accuracy (in %): 99.8806221691654
+                                        Precision (in %): 63.38028169014085
+                                        Recall (in %): 84.90566037735849
+                                        F1 Score (in %): 72.58064516129033
+                                        ROC AUC Score (in %): 97.93671898022413
+
+ADAM 30 epochs
+Neural Network Model Metrics ADAM:
+Accuracy (in %): 99.7436887749728
+Precision (in %): 2.380952380952381
+Recall (in %): 0.9433962264150944
+F1 Score (in %): 1.3513513513513513
+ROC AUC Score (in %): 50.1194510594126
+                                        NO LONGER AVAILABLE
+                                        ADAGRAD 30 epochs with batch_size 256
+                                        Neural Network Model Metrics ADAGRAD:
+                                        Accuracy (in %): 99.85428882412836
+                                        Precision (in %): 59.055118110236215
+                                        Recall (in %): 70.75471698113208
+                                        F1 Score (in %): 64.37768240343347
+                                        ROC AUC Score (in %): 97.09485366540032
+
+NADAM 30 epochs
+Neural Network Model Metrics NADAM:
+Accuracy (in %): 99.76651100733822
+Precision (in %): 3.4482758620689653
+Recall (in %): 0.9433962264150944
+F1 Score (in %): 1.4814814814814814
+ROC AUC Score (in %): 50.19187002715898
+
+FTLR 20 epochs with batch size of 32 was the best NN
+
+
+
+Forgot to include RMSprop (Root Mean Square Propagation) optimizer in the testing for the Neural Networks
+Also, I cant seem to recreate the values I used to get the neural network optimizer metrics tests
+So the best one to use is the random forest and perhaps adding the logistic regression to is.
+If it passes both, then it is not a fraudulent transaction.
